@@ -17,6 +17,9 @@ namespace SnakeandLadder
 
         Console.WriteLine("Game started. Player is at position {player_position}.");
 
+        dice = random.Next(1, 7);
+        Console.WriteLine("Dice rolled: {dice}");
 
+        
     }
 }
