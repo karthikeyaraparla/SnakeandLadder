@@ -28,6 +28,12 @@ namespace SnakeandLadder
         else if (options == 1){
             Console.WriteLine("Ladder");
             player_position = player_position + dice;
+            if (player_position > 100){
+                Console.WriteLine("Player is at position 100, Can't move forward");
+            }
+            else{
+                player_poition = new_position;
+            }
         }
         else if (options == 2){
             Console.WriteLine("Snake");
