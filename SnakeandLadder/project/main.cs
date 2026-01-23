@@ -4,51 +4,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SnakeandLadder
 {
-    class Random
+    class SnakeGame
     {
-        static Random random = new Random();
+        static void Main()
+        {
+            Random random = new Random();
 
-        Console.WriteLine("Welcome to Snake and Ladder Game");
+            Console.WriteLine("Welcome to Snake and Ladder Game");
 
-        int START_POSITION = 0;
-        int player_position = START_POSITION;
-        dice_count = 0;
+            int START_POSITION = 0;
+            int player_position = START_POSITION;
+            int dice_count = 0;
 
-        Console.WriteLine("Game started. Player is at position {player_position}.");
-    while (player_position < 100){
-        dice = random.Next(1, 7);
-        Console.WriteLine("Dice rolled: {dice}");
+            Console.WriteLine($"Game started. Player is at position {player_position}");
 
-        options = random.Next(0, 3);
+            while (player_position < 100)
+            {
+                int dice = random.Next(1, 7);
+                dice_count++;
 
-        if (options == 0){
-            Console.WriteLine("No play");
-        }
-        else if (options == 1){
-            Console.WriteLine("Ladder");
-            player_position = player_position + dice;
-            if (player_position > 100){
-                Console.WriteLine("Player is at position 100, Can't move forward");
+                Console.WriteLine($"Dice rolled: {dice}");
+
+                int options = random.Next(0, 3);
+
+                if (options == 0)
+                {
+                    Console.WriteLine("No Play");
+                }
+                else if (options == 1)
+                {
+                    Console.WriteLine("Ladder");
+                    int new_position = player_position + dice;
+
+                    if (new_position <= 100)
+                    {
+                        player_position = new_position;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Move exceeds 100, staying at same position");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Snake");
+                    player_position -= dice;
+
+                    if (player_position < 0)
+                        player_position = 0;
+                }
+
+                Console.WriteLine($"Player position: {player_position}");
             }
-            else{
-                player_poition = new_position;
-            }
-        }
-        else if (options == 2){
-            Console.WriteLine("Snake");
-            player_position = player_position - dice;
-        }
 
-        if (player_poition < 0){
-            player_position = 0;
+            
+            Console.WriteLine($"Player reached position {player_position}");
+            Console.WriteLine($"Total dice rolls: {dice_count}");
+            Console.ReadLine();
         }
-
-        Console.WriteLine("Player position: {player_position}");
-        
-    }
-    Console.WriteLine("Game over. Player is at position {player_position}.");
-    Console.WriteLine("Total dice rolls: {dice_count}");
     }
 }
