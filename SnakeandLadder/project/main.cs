@@ -34,6 +34,10 @@ namespace SnakeandLadder
             player_position = player_position - dice;
         }
 
+        if (player_poition < 0){
+            player_position = 0;
+        }
+
         Console.WriteLine("Player position: {player_position}");
         
 
