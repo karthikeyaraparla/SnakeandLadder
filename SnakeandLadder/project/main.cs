@@ -14,9 +14,10 @@ namespace SnakeandLadder
 
         int START_POSITION = 0;
         int player_position = START_POSITION;
+        dice_count = 0;
 
         Console.WriteLine("Game started. Player is at position {player_position}.");
-
+    while (player_position < 100){
         dice = random.Next(1, 7);
         Console.WriteLine("Dice rolled: {dice}");
 
@@ -46,6 +47,8 @@ namespace SnakeandLadder
 
         Console.WriteLine("Player position: {player_position}");
         
-
+    }
+    Console.WriteLine("Game over. Player is at position {player_position}.");
+    Console.WriteLine("Total dice rolls: {dice_count}");
     }
 }
