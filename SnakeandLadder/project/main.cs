@@ -1,9 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace SnakeandLadder
 {
@@ -30,7 +25,7 @@ namespace SnakeandLadder
 
                 int options = random.Next(0, 3);
 
-                if (options == 0)
+                if (option == 0)
                 {
                     Console.WriteLine("No Play");
                 }
@@ -60,7 +55,7 @@ namespace SnakeandLadder
                 Console.WriteLine($"Player position: {player_position}");
             }
 
-            
+            Console.WriteLine("===== GAME OVER =====");
             Console.WriteLine($"Player reached position {player_position}");
             Console.WriteLine($"Total dice rolls: {dice_count}");
             Console.ReadLine();
