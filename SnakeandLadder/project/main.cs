@@ -20,6 +20,22 @@ namespace SnakeandLadder
         dice = random.Next(1, 7);
         Console.WriteLine("Dice rolled: {dice}");
 
+        options = random.Next(0, 3);
+
+        if (options == 0){
+            Console.WriteLine("No play");
+        }
+        else if (options == 1){
+            Console.WriteLine("Ladder");
+            player_position = player_position + dice;
+        }
+        else if (options == 2){
+            Console.WriteLine("Snake");
+            player_position = player_position - dice;
+        }
+
+        Console.WriteLine("Player position: {player_position}");
         
+
     }
 }
