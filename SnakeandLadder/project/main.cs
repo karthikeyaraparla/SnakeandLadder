@@ -25,7 +25,7 @@ namespace SnakeandLadder
 
                 int options = random.Next(0, 3);
 
-                if (option == 0)
+                if (options == 0)
                 {
                     Console.WriteLine("No Play");
                 }
